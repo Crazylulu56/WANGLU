@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<canvas id="canvas" width="200px;" height="200px;" style="border:1px solid red"></canvas>
+</body>
+<script>
+    var c=document.querySelector("#canvas");
+    var cxt= c.getContext("2d");
+    cxt.fillStyle="#0f0";
+    cxt.fillRect(50,50,100,100);//  位置，分别指的是left，top，width，height
+
+    //三角
+    cxt.moveTo(60,20);
+    cxt.lineTo(100,50);
+    cxt.lineTo(20,50);
+    cxt.stroke();
+
+    //渐变
+    var grd=cxt.createLinearGradient(0,0,205,50);
+    grd.addColorStop(0,"#ff0000")
+    grd.addColorStop(1,"#00ff00")
+    cxt.fillStyle=grd;
+    cxt.fillRect(0,150,175,50);
+</script>
+</html>
